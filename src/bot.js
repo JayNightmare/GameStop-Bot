@@ -20,7 +20,7 @@ const client = new Client({
         'REACTION'
     ]
 });
-
+ 
 client.commands = new Collection();
 
 try {
