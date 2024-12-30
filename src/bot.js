@@ -3,6 +3,7 @@ const { Client, GatewayIntentBits, Collection } = require('discord.js');
 const fs = require('fs');
 const path = require('path');
 const { DISCORD_TOKEN } = require('./configs/config');
+const { setClient } = require('./services/freeGamesService');
 
 const client = new Client({
     intents: [
@@ -20,7 +21,7 @@ const client = new Client({
         'REACTION'
     ]
 });
- 
+
 client.commands = new Collection();
 
 try {

@@ -1,10 +1,12 @@
 const { REST, Routes, ActivityType } = require('discord.js');
 const { DISCORD_TOKEN } = require('../configs/config');
+const { setClient } = require('../services/freeGamesService');
 const fs = require('fs');
 
 module.exports = {
     name: 'ready',
     async execute(client) {
+        setClient(client);
         console.log(`Logged in as ${client.user.tag}`);
 
         client.user.setActivity('Tracking Times', { type: ActivityType.Watching });
